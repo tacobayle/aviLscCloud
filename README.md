@@ -16,11 +16,16 @@ ansible-galaxy install -f avinetworks.avisdk
 ## Use the ansible playbook to:
 1. Configure a cloud user
 2. Configure the SEs with ssh key
-3. Configure a LSC cloud with all SE from the ansible inventory (group 'SE')
-4. Configure VRF with BGP (if VS.0 has enable_rhi enabled)
-5. Configure a health monitor
-6. Configure a pool
-7. Configure a VS
+3. Configure Network, Ipam and DNS profiles
+3. Configure a LSC cloud with all SE from the ansible inventory (group 'SE'), with Ipam and DNS profiles
+4. Configure VRF:
+- update vrf with BGP parameters (if VS.0 has enable_rhi enabled)
+- configure gateway monitor (if VS.0 has enable_rhi disable)
+4. Configure VS(s):
+- DNS VS
+- Configure health monitor
+- Configure Pool with associated health monitor
+- non DNS VS (with Ipam and DNS): with BGP (if VS.0 has enable_rhi enabled), default is without BGP, with DNS fqdn
 
 ## Parameters:
 All the paramaters/variables are stored in var/params.yml

@@ -22,8 +22,8 @@
       loop: "{{ vrfcontext }}"
       loop_control:
        label: "Update vrf {{ item.name }}"
-      when: virtualservice.0.enable_rhi
-# this when statement needs to be changed because it checks only item 1 of the lists
+      when: virtualservice.http.0.enable_rhi
+# this when statement needs to be changed because it checks only item 1 of the lists of virtualservice http
 
     - name: Configure gateway monitor
       avi_vrfcontext:
@@ -36,4 +36,4 @@
       loop: "{{ vrfcontext }}"
       loop_control:
        label: "Update vrf {{ item.name }}"
-      when: not virtualservice.0.enable_rhi
+      when: not virtualservice.http.0.enable_rhi

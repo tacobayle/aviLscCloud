@@ -1,6 +1,7 @@
 ---
 - import_playbook: configureCloudUser.yml
 - import_playbook: configureSe.yml
+- import_playbook: configureIpamDns.yml
 - import_playbook: configureCloud.yml
 - import_playbook: configureVrf.yml
 - import_playbook: configureVs.yml

@@ -55,5 +55,7 @@
         mtu: 1500
         apic_mode: false
         state_based_dns_registration: true
+        dns_provider_ref: /api/ipamdnsproviderprofile/?name={{ cloud.dns_provider_ref }}
+        ipam_provider_ref: /api/ipamdnsproviderprofile/?name={{ cloud.ipam_provider_ref }}
         name: Default-Cloud
       loop: "{{ ListSe }}"
